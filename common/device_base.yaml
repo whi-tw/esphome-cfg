@@ -1,0 +1,17 @@
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_passphrase
+
+  ap:
+    ssid: "${upper_devicename} Fallback Hotspot"
+    password: !secret wifi_fallback_passphrase
+
+mqtt: 
+  broker: 10.40.0.10
+  port: 1883
+
+captive_portal: {}
+logger: {}
+
+ota:
+  password: !secret ota_password
