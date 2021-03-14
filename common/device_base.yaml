@@ -1,6 +1,7 @@
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_passphrase
+  domain: !secret domain
 
   ap:
     ssid: "${upper_devicename} Fallback Hotspot"
@@ -9,6 +10,10 @@ wifi:
 mqtt: 
   broker: 10.40.0.10
   port: 1883
+  discovery: True
+  discovery_retain: True
+  discovery_prefix: "homeassistant"
+  topic_prefix: "${devicename}"
 
 captive_portal: {}
 logger: {}

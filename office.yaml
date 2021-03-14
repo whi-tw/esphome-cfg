@@ -7,27 +7,27 @@ esphome:
   platform: ESP8266
   board: huzzah
 
-web_server:
-  port: 80
+<<: !include common/device_base.yaml
 
-packages:
-  device_base: !include common/device_base.yaml
+# packages:
+#   device_base: !include common/device_base.yaml
 
 dallas:
   - pin: GPIO4
 
 sensor:
+  - platform: uptime
+    name: "${upper_devicename} Uptime Sensor"
+  - name: "Garden Temperature"
+    platform: dallas
+    address: 0xDB3C01B556748428
   - platform: dht
     pin: GPIO12
     temperature:
       name: "${upper_devicename} Temperature"
     humidity:
       name: "${upper_devicename} Humidity"
-    update_interval: 60s
-  - platform: dallas
-    address: 0xDB3C01B556748428
-    name: "Garden Temperature"
-    
+
 switch:
   - name: "${upper_devicename} Feather LED"
     id: led
