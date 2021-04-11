@@ -1,0 +1,5 @@
+substitutions:
+  devicename: ground-hall
+  upper_devicename: Ground Hall
+
+<<: !include common.sonoff_mini-on_state.yaml

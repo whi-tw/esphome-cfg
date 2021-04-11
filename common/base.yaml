@@ -4,7 +4,7 @@ wifi:
   domain: !secret domain
 
   ap:
-    ssid: "${upper_devicename} Fallback Hotspot"
+    ssid: "${devicename}.fb"
     password: !secret wifi_fallback_passphrase
 
 mqtt: 
@@ -22,3 +22,6 @@ logger: {}
 
 ota:
   password: !secret ota_password
+
+web_server:
+  port: 80

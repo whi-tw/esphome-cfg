@@ -1,0 +1,5 @@
+substitutions:
+  devicename: middle-hall
+  upper_devicename: Middle Hall
+
+<<: !include common.sonoff_mini-on_state.yaml

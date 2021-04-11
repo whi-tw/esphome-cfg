@@ -1,5 +1,5 @@
 substitutions:
-  devicename: office
-  upper_devicename: Office
+  devicename: bedroom
+  upper_devicename: Bedroom
 
 <<: !include common.sonoff_mini.yaml

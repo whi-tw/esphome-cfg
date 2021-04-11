@@ -1,0 +1,5 @@
+substitutions:
+  devicename: top-bathroom
+  upper_devicename: Top Bathroom
+
+<<: !include common.sonoff_mini.yaml

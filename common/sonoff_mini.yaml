@@ -1,0 +1,49 @@
+esphome:
+  name: $devicename
+  platform: ESP8266
+  board: esp8285
+  arduino_version: 2.4.2
+
+<<: !include common.base.yaml
+
+sensor:
+  - platform: uptime
+    name: "${upper_devicename} Sonoff Uptime"
+
+binary_sensor:
+  - platform: gpio
+    pin: GPIO00
+    id: reset
+    internal: true
+    filters:
+      - invert:
+      - delayed_off: 10ms
+    on_press:
+      - light.toggle: light_0
+
+  - platform: gpio
+    name: "${upper_devicename} Switch"
+    pin: 
+      number: GPIO04
+      inverted: True
+    id: switch_1
+    on_press:
+      - light.turn_on: light_0
+    on_release:
+      - light.turn_off: light_0
+
+output:
+  - platform: gpio
+    pin: GPIO12
+    id: relay_0
+
+light:
+  - name: "${upper_devicename} Light"
+    id: light_0
+    platform: binary
+    output: relay_0
+
+status_led:
+  pin:
+    number: GPIO13
+    inverted: yes

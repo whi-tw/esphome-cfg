@@ -1,0 +1,5 @@
+substitutions:
+  devicename: garage
+  upper_devicename: Garage
+
+<<: !include common.sonoff_mini-on_state.yaml

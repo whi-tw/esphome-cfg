@@ -1,0 +1,5 @@
+substitutions:
+  devicename: livingroom
+  upper_devicename: Living Room
+
+<<: !include common.sonoff_mini.yaml

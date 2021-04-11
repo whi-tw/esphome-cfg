@@ -1,0 +1,5 @@
+substitutions:
+  devicename: kitchen-cabinets
+  upper_devicename: Kitchen Cabinets
+
+<<: !include common.sonoff_mini.yaml
