@@ -1,0 +1,5 @@
+substitutions:
+  devicename: outside-back
+  upper_devicename: Outside Back
+
+<<: !include common.sonoff_mini.yaml
